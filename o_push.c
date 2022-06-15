@@ -30,8 +30,8 @@ int check_is_digit(char *args)
 
 	for (i = 0; args[i]; i++)
 	{
-		/*if ((args[i] = '-') && (i == 0))
-			continue;*/
+		if ((args[0] == '-'))
+			continue;
 		if (isdigit(args[i]) == 0)
 			return (1);
 	}
