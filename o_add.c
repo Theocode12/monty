@@ -20,7 +20,7 @@ void o_add(stack_t **top, unsigned int line_number)
 	}
 	if (i < 2)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = *top;
