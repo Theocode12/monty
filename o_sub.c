@@ -9,7 +9,7 @@
 void o_sub(stack_t **top, unsigned int line_number)
 {
 	stack_t *temp;
-	unsigned int diff;
+	int diff;
 
 	temp = *top;
 	if (!(*top) || !((*top)->next))

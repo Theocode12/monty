@@ -8,7 +8,7 @@
 void o_add(stack_t **top, unsigned int line_number)
 {
 	stack_t *temp;
-	unsigned int sum;
+	int sum;
 
 	temp = *top;
 	if (!(*top) || !((*top)->next))
