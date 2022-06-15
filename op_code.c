@@ -18,6 +18,7 @@ void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s)
 		/*{"pop", o_pop},*/
 		{"pint", o_pint},
 		{"add", o_add},
+		{"sub", o_sub},
 		/*{"swap", o_add},*/
 		/*{"nop", o_nop},*/
 		{NULL, NULL}

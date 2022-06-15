@@ -52,5 +52,6 @@ void clear_stack(stack_t *top);
 void exit_out(char *lineptr, FILE *stream, stack_t *top);
 void o_pint(stack_t **top, unsigned int line_number);
 void o_add(stack_t **top, unsigned int line_number);
+void o_sub(stack_t **top, unsigned int line_number);
 
 #endif /*_MONTY_H*/
