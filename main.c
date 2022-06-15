@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	FILE *stream = NULL;
 	stack_t *top = NULL;
 
-	if (argc <= 1)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
