@@ -38,8 +38,6 @@ int main(int argc, char **argv)
 		/*get the first args in a line e.g push*/
 		bytec_args = strtok(lineptr, " \r\n\t");
 		/*from here below will be modified but search_opcode will always run*/
-		if (strcmp(bytec_args, "NULL") == 0)
-			bytec_args = NULL;
 		if (bytec_args && bytec_args[0] != '#')
 			search_opcode(bytec_args, line_num, &top, &op_status);
 		if (op_status != 0)
