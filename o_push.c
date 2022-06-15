@@ -8,17 +8,9 @@
 
 void o_push(stack_t **top, unsigned int line_number)
 {
-	char *args = strtok(NULL, " \n\r\t");
-	int n;
 	stack_t *nw_node = NULL;
 
-	if (args == NULL  || check_is_digit(args))
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-	n = atoi(args);
-	nw_node = getnode(n);
+	nw_node = getnode(line_number);
 	if (*top == NULL)
 	{
 		*top = nw_node;
@@ -47,4 +39,26 @@ int check_is_digit(char *args)
 			return (1);
 	}
 	return (0);
+}
+
+/**
+ * getnode - creates a node to be added on stack
+ * @n: integer data for node
+ * Return: address of created node
+ */
+
+stack_t *getnode(int n)
+{
+	stack_t *node = NULL;
+
+	node = malloc(sizeof(stack_t));
+	if (node == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	node->next = NULL;
+	node->prev = NULL;
+	node->n = n;
+	return (node);
 }

@@ -3,7 +3,7 @@
 #include "monty.h"
 
 /**
- * main - Entry point for monty bytecode
+ * main - Entry point for monty stack_t *head = NULL;bytecode
  * @argc: arguement count
  * @argv: arguement vector
  * Return: exit success on successful execution
@@ -12,7 +12,7 @@
 int main(int argc, char **argv)
 {
 	char *lineptr = NULL, *bytec_args = NULL;
-	size_t n = 0, line_num = 0;
+	size_t n = 0, line_num = 0, op_status = 0;
 	FILE *stream = NULL;
 	stack_t *top = NULL;
 
@@ -41,32 +41,14 @@ int main(int argc, char **argv)
 		if (strcmp(bytec_args, "NULL") == 0)
 			bytec_args = NULL;
 		if (bytec_args && bytec_args[0] != '#')
-			search_opcode(bytec_args, &line_num, &top);
+			search_opcode(bytec_args, line_num, &top, &op_status);
+		if (op_status != 0)
+		{
+			exit_out(lineptr, stream, top);
+			exit(EXIT_FAILURE);
+		}
 	}
-	free(lineptr);
-	fclose(stream);
-	clear_stack(top);
+	exit_out(lineptr, stream, top);
 	exit(EXIT_SUCCESS);
-}
 
-/**
- * getnode - creates a node to be added on stack
- * @n: integer data for node
- * Return: address of created node
- */
-
-stack_t *getnode(int n)
-{
-	stack_t *node = NULL;
-
-	node = malloc(sizeof(stack_t));
-	if (node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-	node->next = NULL;
-	node->prev = NULL;
-	node->n = n;
-	return (node);
 }

@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
+extern int status;
 /*#define BUFSIZE 1024*/
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,16 +41,13 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
-
-
 char **get_args(char *lineptr);
-void search_opcode(char *bytec_args, size_t *line_num, stack_t **top);
+void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s);
 stack_t *getnode(int n);
 void o_push(stack_t **top, unsigned int line_number);
 void o_pall(stack_t **top, unsigned int line_number);
 int check_is_digit(char *args);
 void clear_stack(stack_t *top);
-/*ssize_t _getline(char **lineptr, size_t *n, FILE *stream);*/
+void exit_out(char *lineptr, FILE *stream, stack_t *top);
 
 #endif /*_MONTY_H*/
