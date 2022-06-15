@@ -17,7 +17,7 @@ void o_sub(stack_t **top, unsigned int line_number)
 		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	diff = (*top)->n - (*top)->next->n;
+	diff = (*top)->next->n - (*top)->n;
 	*top = (*top)->next;
 	(*top)->prev = NULL;
 	(*top)->n = diff;
