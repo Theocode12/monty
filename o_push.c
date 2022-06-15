@@ -1,6 +1,12 @@
 #include "monty.h"
 
-void o_push(stack_t **top, __attribute__((unused))unsigned int line_number)
+/**
+ * o_push - pushes a node onto the stack
+ * @top: top of the stack
+ * @line_number: currect line number at which command is
+ */
+
+void o_push(stack_t **top, unsigned int line_number)
 {
 	char *args = strtok(NULL, " \n\r\t");
 	int n;
@@ -21,8 +27,13 @@ void o_push(stack_t **top, __attribute__((unused))unsigned int line_number)
 	(*top)->prev = nw_node;
 	nw_node->next = *top;
 	*top = nw_node;
-	return;
 }
+
+/**
+ * check_is_digit - check if a string is okay to be changed to an int
+ * @args: string to be checked
+ * Return: if successful return 1 else 0
+ */
 
 int check_is_digit(char *args)
 {

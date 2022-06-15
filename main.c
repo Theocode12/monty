@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include "monty.h"
 
+/**
+ * main - Entry point for monty bytecode
+ * @argc: arguement count
+ * @argv: arguement vector
+ * Return: exit success on successful execution
+ */
 
 int main(int argc, char **argv)
 {
@@ -29,7 +35,9 @@ int main(int argc, char **argv)
 	while (getline(&lineptr, &n, stream) != -1)
 	{
 		line_num++;
+		/*get the first args in a line e.g push*/
 		bytec_args = strtok(lineptr, " \r\n\t");
+		/*from here below will be modified but search_opcode will always run*/
 		if (strcmp(bytec_args, "NULL") == 0)
 			bytec_args = NULL;
 		if (bytec_args && bytec_args[0] != '#')
@@ -38,10 +46,14 @@ int main(int argc, char **argv)
 	free(lineptr);
 	fclose(stream);
 	clear_stack(top);
-	exit (EXIT_SUCCESS);
+	exit(EXIT_SUCCESS);
 }
 
-
+/**
+ * getnode - creates a node to be added on stack
+ * @n: integer data for node
+ * Return: address of created node
+ */
 
 stack_t *getnode(int n)
 {
@@ -50,45 +62,11 @@ stack_t *getnode(int n)
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
 	{
-		fprintf(stderr,"Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = n;
-	return node;
+	return (node);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*char **get_args(char *lineptr)
-{
-	char **holdargs;
-	int i = 0;
-
-	holdargs = malloc(sizeof(char *) * 3);
-	if (holdargs == NULL)
-	{
-		fprintf(stderr,"Error: malloc failed");
-		exit(EXIT_FAILURE);
-	}
-	holdargs[i] = strtok(lineptr, " \n\r\t");
-	while (holdargs[i] != NULL && *(holdargs[i]) != '#')
-		holdargs[++i] = strtok(NULL, " \n\t\r");
-	holdargs[i] = NULL;
-	return (holdargs);
-
-}*/
