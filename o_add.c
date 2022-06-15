@@ -26,6 +26,7 @@ void o_add(stack_t **top, unsigned int line_number)
 	temp = *top;
 	sum = (*top)->n + (*top)->next->n;
 	*top = (*top)->next;
+	(*top)->prev = NULL;
 	(*top)->n = sum;
 	free(temp);
 }
