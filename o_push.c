@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void o_push(stack_t **top, unsigned int line_number)
+void o_push(stack_t **top, __attribute__((unused))unsigned int line_number)
 {
 	char *args = strtok(NULL, " \n\r\t");
 	int n;
