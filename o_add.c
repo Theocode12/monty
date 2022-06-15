@@ -11,7 +11,7 @@ void o_add(stack_t **top, unsigned int line_number)
 	int sum;
 
 	temp = *top;
-	if (!(*top) || !((*top)->next))
+	if (!(*top) && !((*top)->next))
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);

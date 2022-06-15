@@ -41,6 +41,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 char **get_args(char *lineptr);
 void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s);
 stack_t *getnode(int n);
