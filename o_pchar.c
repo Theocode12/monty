@@ -11,7 +11,7 @@ void o_pchar(stack_t **top, unsigned int line_number)
 {
 	if (*top == NULL)
 	{
-		fprintf("L%u: can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*top)->n >= 0 && (*top)->n <= 127)
@@ -20,6 +20,6 @@ void o_pchar(stack_t **top, unsigned int line_number)
 	}
 	else
 	{
-		fprintf("L%u: can't pchar, value out of range\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 	}
 }
