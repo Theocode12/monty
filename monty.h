@@ -56,6 +56,8 @@ void o_sub(stack_t **top, unsigned int line_number);
 void o_div(stack_t **top, unsigned int line_number);
 void o_pop(stack_t **top, unsigned int line_number);
 void o_swap(stack_t **top, unsigned int line_number);
-void o_nop(__attribute__((unused))stack_t **top, __attribute__((unused))unsigned int line_number);
+void o_nop(stack_t **top, unsigned int line_number);
+void o_mod(stack_t **top, unsigned int line_number);
+void o_mul(stack_t **top, unsigned int line_number);
 
 #endif /*_MONTY_H*/

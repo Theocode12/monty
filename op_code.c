@@ -22,6 +22,8 @@ void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s)
 		{"div", o_div},
 		{"swap", o_swap},
 		{"nop", o_nop},
+		{"mul", o_mul},
+		{"mod", o_mod},
 		{NULL, NULL}
 	};
 
