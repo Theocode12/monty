@@ -10,12 +10,12 @@
 void o_pstr(stack_t **top, unsigned int line_number)
 {
 	stack_t *temp = *top;
-	(void) line_number;
 
 	if (temp != NULL)
 	{
 		while (temp == 0 || temp->n < 0 || temp->n > 127)
 			break;
+
 		printf("%c", temp->n);
 		temp = temp->next;
 	}
