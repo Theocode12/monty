@@ -16,11 +16,8 @@ void o_pstr(stack_t **top, unsigned int line_number)
 	{
 		while (temp == 0 || temp->n < 0 || temp->n > 127)
 			break;
-		printf("%c\n", temp->n);
+		printf("%c", temp->n);
 		temp = temp->next;
 	}
-	else
-	{
-		printf("\n");
-	}
+	printf("\n");
 }
