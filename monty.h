@@ -60,5 +60,6 @@ void o_nop(stack_t **top, unsigned int line_number);
 void o_mod(stack_t **top, unsigned int line_number);
 void o_mul(stack_t **top, unsigned int line_number);
 void o_pchar(stack_t **top, unsigned int line_number);
+void o_pstr(stack_t **top, unsigned int line_number);
 
 #endif /*_MONTY_H*/
