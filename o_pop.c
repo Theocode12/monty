@@ -16,7 +16,10 @@ void o_pop(stack_t **top, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	(*top)->prev->prev = prevNode;
-	prev_node->next = *top;
-	*top = prev_node;
-	free(temp)
+	else
+	{
+		(*top)->prev = prevNode;
+		prev_node->next = NULL;
+		*top = prev_node;
+		free(temp)
+	}
