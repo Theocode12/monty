@@ -20,7 +20,7 @@ void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s)
 		{"add", o_add},
 		{"sub", o_sub},
 		{"div", o_div},
-		/*{"swap", o_add},*/
+		{"swap", o_swap},
 		/*{"nop", o_nop},*/
 		{NULL, NULL}
 	};
