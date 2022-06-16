@@ -16,7 +16,7 @@ void o_pchar(stack_t **top, unsigned int line_number)
 	}
 	if ((*top)->n >= 0 && (*top)->n <= 127)
 	{
-		fprintf("%c\n", (*top)->n);
+		printf("%c\n", (*top)->n);
 	}
 	else
 	{
