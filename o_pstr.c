@@ -9,17 +9,18 @@
 
 void o_pstr(stack_t **top, unsigned int line_number)
 {
-	if (*top == NULL)
+	stack_t *temp = *top;
+	(void) line_number;
+
+	if (temp != NULL)
+	{
+		while (temp == 0 || temp->n < 0 || temp->n > 127)
+			break;
+		printf("%c\n", temp->n);
+		temp = temp->next;
+	}
+	else
 	{
 		printf("\n");
-	}
-
-	if (0 <= (*top)->n <= 127)
-	{
-		while ((*top)->next == NULL || (*top)->n == 48 || (*top)->n > 127)
-		{
-			break;
-		}
-		printf("%c\n", (*top)->n);
 	}
 }
