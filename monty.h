@@ -43,7 +43,7 @@ typedef struct instruction_s
 } instruction_t;
 
 char **get_args(char *lineptr);
-void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s);
+void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s, size_t mode);
 stack_t *getnode(int n);
 void o_push(stack_t **top, unsigned int line_number);
 void o_pall(stack_t **top, unsigned int line_number);
@@ -61,5 +61,8 @@ void o_mod(stack_t **top, unsigned int line_number);
 void o_mul(stack_t **top, unsigned int line_number);
 void o_pchar(stack_t **top, unsigned int line_number);
 void o_pstr(stack_t **top, unsigned int line_number);
+void o_rotl(stack_t **top, __attribute__((unused))unsigned int line_number);
+void o_rotr(stack_t **top,  __attribute__((unused))unsigned int line_number);
+void add_to_queue(stack_t **top, size_t n);
 
 #endif /*_MONTY_H*/

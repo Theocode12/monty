@@ -12,7 +12,7 @@
 int main(int argc, char **argv)
 {
 	char *lineptr = NULL, *bytec_args = NULL;
-	size_t n = 0, line_num = 0, op_status = 0;
+	size_t n = 0, line_num = 0, op_status = 0, mode = 0;
 	FILE *stream = NULL;
 	stack_t *top = NULL;
 
@@ -35,11 +35,19 @@ int main(int argc, char **argv)
 	while (getline(&lineptr, &n, stream) != -1)
 	{
 		line_num++;
-		/*get the first args in a line e.g push*/
 		bytec_args = strtok(lineptr, " \r\n\t");
-		/*from here below will be modified but search_opcode will always run*/
+		if (strcmp(bytec_args, "queue") == 0)
+		{
+			mode = 1;
+			continue;
+		}
+		else if (strcmp(bytec_args, "stack") == 0)
+		{
+			mode = 0;
+			continue;
+		}
 		if (bytec_args && bytec_args[0] != '#')
-			search_opcode(bytec_args, line_num, &top, &op_status);
+			search_opcode(bytec_args, line_num, &top, &op_status, mode);
 		if (op_status != 0)
 		{
 			exit_out(lineptr, stream, top);
@@ -48,5 +56,4 @@ int main(int argc, char **argv)
 	}
 	exit_out(lineptr, stream, top);
 	exit(EXIT_SUCCESS);
-
 }

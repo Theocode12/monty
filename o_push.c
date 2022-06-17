@@ -22,6 +22,30 @@ void o_push(stack_t **top, unsigned int line_number)
 }
 
 /**
+ * add_to_queue - add node in queue mode
+ * @top: top of the stack
+ * @n: number to insert in node
+ */
+
+void add_to_queue(stack_t **top, size_t n)
+{
+	stack_t *nw_node = NULL, *temp = *top;
+
+	nw_node = getnode(n);
+	if (*top == NULL)
+	{
+		*top = nw_node;
+		return;
+	}
+	while (temp->next)
+		temp = temp->next;
+	temp->next = nw_node;
+	nw_node->prev = temp;
+}
+
+
+
+/**
  * check_is_digit - check if a string is okay to be changed to an int
  * @args: string to be checked
  * Return: if successful return 1 else 0

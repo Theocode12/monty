@@ -5,13 +5,13 @@
  * @line_num: line number of the file
  * @top: top of the stack
  * @op_s: returns positive int if error occurred
+ * @md: mode of operation
  */
 
-void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s)
+void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s, size_t md)
 {
 	int i = 0;
 	char *args;
-	/*An array of strctures we will use to compare opcodes*/
 	instruction_t ops_codes[] = {
 		{"push", o_push},
 		{"pall", o_pall},
@@ -26,6 +26,8 @@ void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s)
 		{"mod", o_mod},
 		{"pchar", o_pchar},
 		{"pstr", o_pstr},
+		{"rotl", o_rotl},
+		{"rotr", o_rotr},
 		{NULL, NULL}
 	};
 
@@ -39,13 +41,16 @@ void search_opcode(char *op_code, size_t line_num, stack_t **top, size_t *op_s)
 			return;
 		}
 		line_num = atoi(args);
+		if (md == 1)
+		{
+			add_to_queue(top, line_num);
+			return;
+		}
 	}
 	for (i  = 0; ops_codes[i].opcode; i++)
 	{
-		/*compares the string in the array of struct with bytecodes passed*/
 		if (strcmp(op_code, ops_codes[i].opcode) == 0)
 		{
-			/*if a match is found call the resulting function pointer*/
 			ops_codes[i].f(top, line_num);
 			return;
 		}
