@@ -8,6 +8,7 @@
 
 void o_rotl(stack_t **top, __attribute__((unused))unsigned int line_number)
 {
+
 	stack_t *temp;
 
 	if (*top == NULL || (*top)->next == NULL)
