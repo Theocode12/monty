@@ -8,8 +8,12 @@
 
 void o_rotl(stack_t **top, unsigned int line_number)
 {
+	stack_t *temp = *top;
 	(void) line_number;
 
-	if (*top)
-		*top = (*top)->next;
+	if (*temp)
+	{
+		*temp = (*temp)->next;
+	}
+	temp->prev = *top,
 }
