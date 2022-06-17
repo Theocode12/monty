@@ -17,5 +17,4 @@ void o_rotl(stack_t **top, unsigned int line_number)
 		node_val = temp->n;
 		temp = temp->next;
 	}
-	temp++;
 }
