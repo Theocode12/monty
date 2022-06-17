@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 	{
 		line_num++;
 		bytec_args = strtok(lineptr, " \r\n\t");
-		if (strcmp(bytec_args, "queue") == 0)
+		/*if (strcmp(bytec_args, "queue") == 0)
 		{
 			mode = 1;
 			continue;
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 		{
 			mode = 0;
 			continue;
-		}
+		}*/
 		if (bytec_args && bytec_args[0] != '#')
 			search_opcode(bytec_args, line_num, &top, &op_status, mode);
 		if (op_status != 0)
