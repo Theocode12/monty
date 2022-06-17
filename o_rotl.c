@@ -12,18 +12,11 @@ void o_rotl(stack_t **top, unsigned int line_number)
 	unsigned int node_val = 0;
 	(void) line_number;
 
-	if (temp)
+	while (temp != NULL)
 	{
-		while (temp != NULL)
-		{
-			/**
-			 * node_val = temp->n;
-			* temp->n = temp->next->n;
-			* temp->next->n = node_val;
-			* temp = temp->next;
-			* */
-			temp = temp->next;
-		}
-		temp->prev = NULL;
+		node_val = temp->n;
+		temp->n = temp->next->n;
+		temp->next->n = node_val;
+		temp = temp->next;
 	}
 }
