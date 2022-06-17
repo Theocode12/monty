@@ -14,7 +14,7 @@ void o_rotl(stack_t **top, unsigned int line_number)
 
 	if (*temp)
 	{
-		while (*temp != NULL)
+		while (temp != NULL)
 		{
 			node_val = temp->n;
 			temp->n = temp->next->n;
