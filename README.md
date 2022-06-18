@@ -398,7 +398,7 @@ push 9$
 pall$
 rotr$
 pall$
-$ valentine@ubuntu:~/monty$ ./monty.run bytecodes/rotr.m 
+$ valentine@ubuntu:~/monty$ ./monty bytecodes/rotr.m 
 9
 8
 7
@@ -511,3 +511,22 @@ $ valentine@ubuntu:~/monty/bf$ bf ./1001-add.bf
 81
 9$ valentine@ubuntu:~/monty/bf$ 
 ```
+
+## Multiply two digit
+
+ Multiply two digit given by the user.
+
+ * Read the two digits from stdin, add them, and print the result
+ * The total of the product of the two digit must be one digit long
+
+ **Source:** [bf/1002-mul.bf](https://github.com/Theocode12/monty/blob/main/bf/1002-mul.bf)
+
+ ```
+julien@ubuntu:~/monty/bf$ bf 1002-mul.bf
+24
+8julien@ubuntu:~/monty/bf$
+ ```
+
+**Contributors:** Dr. Eka Essien and Maduagwu Valentine
+
+**Courtesy:** ALX Software Engineering Program
