@@ -527,6 +527,6 @@ julien@ubuntu:~/monty/bf$ bf 1002-mul.bf
 8julien@ubuntu:~/monty/bf$
  ```
 
-**Contributors:** Dr. Eka Essien and Maduagwu Valentine
+**Contributors:** Dr. Ekaette Essien and Maduagwu Valentine
 
 **Courtesy:** ALX Software Engineering Program
